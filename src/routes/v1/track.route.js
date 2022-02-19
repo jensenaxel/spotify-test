@@ -46,20 +46,32 @@ module.exports = router;
  *                  type: string
  *                  enum: [user, admin]
  *             example:
- *               isrc: fake name
+ *               isrc: USVT10300001
  *     responses:
- *       "201":
- *         description: Created
+ *       "200":
+ *         description: Okay
  *         content:
  *           application/json:
- *             schema:
- *                $ref: '#/components/schemas/User'
- *       "400":
- *         $ref: '#/components/responses/DuplicateEmail'
- *       "401":
- *         $ref: '#/components/responses/Unauthorized'
- *       "403":
- *         $ref: '#/components/responses/Forbidden'
- *
  */
 
+
+/**
+ * @swagger
+ * /tracks/{isrc}:
+ *   get:
+ *     summary: Get a track by isrc
+ *     description: Get track by isrc
+ *     tags: [Tracks]
+ *     parameters:
+ *       - in: path
+ *         name: isrc
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ISRC
+ *     responses:
+ *       "200":
+ *         description: OK
+ *         content:
+ *           application/json:
+ */
